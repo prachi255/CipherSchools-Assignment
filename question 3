@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+int maxmoney(int *money,int index,int size){
+    if(index>=size){
+        return 0;
+    }
+    
+return max(money[index]+maxmoney(money,index+2,size) , maxmoney(money,index+1,size));    
+}
+
+int main()
+{
+    
+    int *arr=new int[4];
+ // giving the sample input provided
+    arr[0]=1;
+    arr[1]=2;
+    arr[2]=3;
+    arr[3]=1;
+   
+
+  int ans=maxmoney(arr,0,4);
+  cout<<"max money which can be looted is: "<<ans;
+   
+   return 0;
+}
