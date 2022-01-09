@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int missingNumber(int nums[] , int n , int size){
+    int sumtilln=(n*(n+1))/2;
+    int arrsum=0;
+    for(int i=0;i<size;i++){
+        arrsum+=nums[i];
+    }
+    
+    int missingNum=sumtilln-arrsum;
+    return missingNum;
+}
+
+int main()
+{
+    int n=3;
+    //arr will contain elements from 0 to 3 leaving 1 element
+    int size=3;
+    int nums[]={3,0,1};
+    cout<<"The missing number is: "<<missingNumber(nums,n,size);
+   return 0;
+}
